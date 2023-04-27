@@ -1,0 +1,51 @@
+
+header {
+    background-color: #85CDFD;
+    display: flex;
+    justify-content: center;
+    height: 180px;
+    padding-top: 5%;
+    font-family: 'Cormorant Garamond', serif;
+    color: #DEFCF9;
+    font-weight: bold;
+
+}
+.title {
+    font-size: 3.5em;
+}
+
+
+#photo {
+
+color: #362FD9;
+
+}
+
+.image {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    padding-top: 5%;
+    background-color: #DEFCF9;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.5em;
+
+
+}
+
+.img {
+max-width: 100%;
+max-height: 1000px;
+object-fit: cover;
+
+}
+
+.file {
+    margin-top: 10%;
+}
+
+.hex-color {
+width: 200px;
+height: 40px;
+}
+

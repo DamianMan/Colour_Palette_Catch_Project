@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="static/styles.css">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@700&display=swap" rel="stylesheet">
+
+    <title>Colour Palette Catcher</title>
+</head>
+<body style="background-color: #DEFCF9;">
+    <header>
+        <h1 class="title">IMAGE COLOR EXTRACT</h1>
+    </header>
+    <section id="photo">
+        <div class="container image">
+
+            <img  class="img" src="{{ image }}">
+            <div class="row">
+                <table>
+                    <thead>
+                        <tr>
+                            <th scope="col"></th>
+                            <th scope="col">Color</th>
+                            <th scope="col">Color Code</th>
+                            <th scope="col"> Percentage</th>
+                        </tr>
+                        <tbody>
+                            {% if colors != []: %}
+                            {% for color in colors: %}
+                            <tr>
+                            <th scope="row"></th>
+                                <td><input type="color" value="{{ color }}" class="hex-color"></td>
+                                <td>{{ color }}</td>
+                                <td>{{ colors[color] }}</td>
+
+                            {% endfor %}
+                            {% endif %}
+
+                            </tr>
+
+
+                        </tbody>
+
+                    </thead>
+                </table>
+                <div class="file mt-3">
+                    <label>
+                        File to upload:
+                        <form method="post" enctype="multipart/form-data">
+                            <div class="row">
+                                <input type="file" name="image-file" class="form-control">
+                            </div>
+                            <div class="row">
+                                <label class="num-title mt-3">Number of colors to extract:</label><br>
+                                <input type="number" name="quantity" class="colors">
+                            </div>
+                            <div class="row">
+                                <input class="btn btn-outline-primary mt-5 mb-5" type="submit">
+                            </div>
+                        </form>
+                    </label>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
